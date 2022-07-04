@@ -1,0 +1,10 @@
+::ng-deep [dir="ltr"] {}
+
+::ng-deep [dir="rtl"] {
+  .loginForm-area {
+    height: 50vh;
+  }
+  .mat-form-field{
+    width: 20vw ;
+ }
+}

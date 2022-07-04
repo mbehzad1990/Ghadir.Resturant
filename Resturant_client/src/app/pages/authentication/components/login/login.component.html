@@ -1,0 +1,51 @@
+<div fxLayout="row" fxFill>
+  <!-- right Side -->
+  <div fxLayout="column" fxLayoutAlign="center cneter" fxFlex="30%" fxFill>
+    <div fxLayout="column">
+      <h2 class="text-center">سامانه اطلاس رستورانی</h2>
+      <p class="text-center"> رویکردی مدرن در مدیریت توزیع غذل </p>
+
+      <form [formGroup]="loginForm">
+        <div fxLayout="column" fxLayoutAlign="center center" class="mx-4 mt-4" fxLayoutGap="20px">
+          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+            <!-- UserName -->
+            <mat-form-field appearance="legacy" class="mat-field-width">
+              <mat-label>نام کاربری</mat-label>
+              <input matInput placeholder="abc" formControlName="username">
+              <mat-hint>نام کاربری الزامی است</mat-hint>
+              <!-- <mat-error *ngIf="errorHandling('username','required')">
+              نام کاربری را وارد کنید
+            </mat-error> -->
+            </mat-form-field>
+
+            <!-- Password -->
+            <mat-form-field appearance="legacy" class="mat-field-width">
+              <mat-label >رمز عبور</mat-label>
+              <input matInput placeholder="رمزعبور" formControlName="password"
+                [type]="hidePassword ? 'password' : 'text'">
+              <mat-icon class="cursor-pointer" matSuffix (click)="hidePassword = !hidePassword">
+                {{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <mat-hint>Hint</mat-hint>
+              <!-- <mat-error *ngIf="errorHandling('password','required')">
+                رمز عبور را وارد کنید
+              </mat-error> -->
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxFlexAlign="cenetr" class="mt-3" align="end">
+            <button type="button" mat-raised-button color="primary">
+              <span fxLayout fxLayoutAlign="center center">
+                <span>ورود</span>
+                <mat-spinner *ngIf="isLoading$ | async" class="mx-2" color="accent" diameter="20">
+                </mat-spinner>
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- left side -->
+  <div fxFlex="70%" fxFill style="background-color: blue;">
+  </div>
+</div>

@@ -1,0 +1,116 @@
+/*#region rtl*/
+[dir="rtl"] {
+  body {
+    background-color: mat-color($gray-palette, 50);
+    color: mat-color($textcolor-palette, dusk);
+    box-sizing: border-box;
+    text-align: right;
+    margin: 0;
+    font-family: "IRANSans";
+    font-size: 13px;
+    line-height: 23px;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  strong,
+  kbd,
+  samp {
+    color: mat-color($textcolor-palette, dusk);
+  }
+
+  .mat-body,
+  .mat-body-1,
+  .mat-typography {
+    font: normal 13px / 23px IRANSans !important;
+  }
+}
+
+/* Works on Firefox */
+// * {
+//   // scrollbar-width: thin;
+//   // scrollbar-color: mat-color($gray-palette, 400) mat-color($gray-palette, 50);
+// }
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+/*#endregion rtl*/
+
+
+/*#region ltr*/
+[dir="ltr"] {
+  body {
+    background-color: mat-color($gray-palette, 50);
+    color: mat-color($textcolor-palette, dusk);
+    box-sizing: border-box;
+    text-align: left;
+    margin: 0;
+    font-family: "IRANSans";
+    font-size: 13px;
+    line-height: 25px;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  strong,
+  kbd,
+  samp {
+    color: mat-color($textcolor-palette, dusk);
+  }
+
+  /* Works on Firefox */
+  // * {
+  //   // scrollbar-width: thin;
+  //   // scrollbar-color: mat-color($gray-palette, 400) mat-color($gray-palette, 50);
+  // }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
+
+  .cursor-default {
+    cursor: default !important;
+  }
+}
+
+/*#endregion ltr*/
