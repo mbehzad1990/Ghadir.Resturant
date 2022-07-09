@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   //#region Input & OutPut & Others
   //#region
-  constructor() { }
+  constructor( private _router:Router) { }
 
   ngOnInit(): void {
     this._initFormElement();
@@ -36,4 +37,9 @@ export class LoginComponent implements OnInit {
   }
   //#endregion
 
+  //#region Public Methods
+  public login() {
+    this._router.navigateByUrl('/panel');
+  }
+  //#endregion
 }

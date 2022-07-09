@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/styles/fonts.scss";
+@import "assets/styles/variables";
 @import "assets/styles/mat-color-palette.scss";
 @import "assets/styles/widgetSize.scss";
 @import "assets/styles/resturant.scss";
 @import "assets/styles/mat-custom-theme.scss";
+@import "assets/styles/colors-class.scss";
+@import "assets/icon/_collection/style.css";
+
 // @import "assets/styles/mat-controls.scss";
 
 
@@ -565,7 +569,7 @@ button.bg-primary:hover {
 .mat-list-base .mat-list-item .mat-list-item-content,
 .mat-list-base .mat-list-option .mat-list-item-content {
   padding: 0 30px 0px 20px !important;
-  border-right: 3px solid transparent;
+  // border-right: 3px solid transparent;
 }
 
 .mat-nav-list .mat-list-item:hover .mat-list-item-content {
@@ -643,4 +647,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.white{
+  color: white;
 }

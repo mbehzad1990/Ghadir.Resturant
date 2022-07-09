@@ -1,0 +1,34 @@
+<mat-toolbar style="width: 100%;">
+  <div fxLayout fxLayoutAlign="space-between center" fxFill>
+    <div fxLayout fxLayoutAlign="center center" class="me-2">
+
+      <button type="button" mat-icon-button>
+        <mat-icon> <i class="icon-bell icon-20px"></i>
+        </mat-icon>
+      </button>
+      <button type="button" mat-icon-button>
+        <mat-icon> <i class="icon-bell "></i>
+        </mat-icon>
+      </button>
+      <button type="button" mat-icon-button>
+        <mat-icon> <i class="icon-file icon-20px"></i>
+        </mat-icon>
+      </button>
+      <button type="button" mat-icon-button (click)="changeExpandToggle()">
+        <mat-icon> <i class="icon-calendar icon-20px"></i>
+        </mat-icon>
+      </button>
+    </div>
+    <div class="abs-section">
+      <span class="mat-body">1401/02/21 - چهارشنبه</span>
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <i class="icon-settings icon-20px"></i>
+      </button> -->
+      <button mat-icon-button color="primary" class="mx-3" matTooltip="خروج از سیستم">
+        <span class="icon-log-out icon-20px"></span>
+      </button>
+
+    </div>
+  </div>
+
+</mat-toolbar>

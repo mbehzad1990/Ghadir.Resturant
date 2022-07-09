@@ -4,9 +4,13 @@ import { AuthenticationComponent } from './authentication.component';
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path:'',component:AuthenticationComponent,children:[
-    {path:'login',component:LoginComponent}
-  ]}
+  {
+    path: '', component: AuthenticationComponent, children: [
+      { path: 'login', component: LoginComponent },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: '**', redirectTo: 'login', pathMatch: 'full' },
+    ]
+  }
 ];
 
 @NgModule({

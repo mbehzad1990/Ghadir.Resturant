@@ -1,1 +1,26 @@
-<p>panel works!</p>
+<mat-sidenav-container >
+  <mat-sidenav mode="side" disableClose="false" opened  (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <panel-sidenav  ></panel-sidenav>
+  </mat-sidenav>
+  <!-- Toolbar -->
+  <mat-sidenav-content class="sticky-toolbar" [ngClass]="{'change-width' : (isExpanded$|async) }">
+    <div>
+      <panel-toolbar ></panel-toolbar>
+
+    </div>
+  </mat-sidenav-content>
+  <!-- Toolbar -->
+</mat-sidenav-container>
+
+<!--  (mouseenter)="mouseenter()" (mouseleave)="mouseleave()" -->
+<!-- <mat-sidenav-container>
+  <mat-sidenav mode="side" disableClose="false" opened>
+    <panel-sidenav [isExpanded]="(isExpanded$|async)!"></panel-sidenav>
+  </mat-sidenav>
+  <mat-drawer-content class="sticky-toolbar" [ngClass]="{'change-width' : (!(isExpanded$|async) )}">
+    <div>
+      <panel-toolbar ></panel-toolbar>
+
+    </div>
+  </mat-drawer-content>
+</mat-sidenav-container> -->

@@ -1,0 +1,102 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px" class="user-profile mt-5 mb-3" >
+
+  <div class="user-profile_img" [ngClass]="{'small-img' : !(isExpanded$|async)}">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL_IbRQvlVj5_heS6MBUBdPrmF7MUJdswsAw&usqp=CAU"
+      alt="">
+    <span class="user-profile_img_state _success-bg-color"></span>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" *ngIf="(isExpanded$|async) || (isHover$|async)">
+    <p>مهدی بهزاد</p>
+    <span>کارشناس نرم افزار</span>
+  </div>
+</div>
+
+<div class="mt-5 make-overflow-y sidebar-items" [ngClass]="{'closed-menu' : !(isExpanded$|async)  }">
+  <cdk-accordion class="sidebar-accordion">
+    <!-- تعاریف اولیه -->
+    <cdk-accordion-item fxLayout="column" class="py-1 sidebar-cdk-accordion-item  "
+      [routerLinkActive]="['active-accordion-item']" #initDefinition="cdkAccordionItem">
+      <div class="sidebar-accordion-item-header" fxLayout fxLayoutAlign="start center" (click)="initDefinition.toggle()"
+        fxLayoutGap="10px" >
+        <!-- <i class="icon-sidebar icon-20px"></i> -->
+        <img src="../../../../../assets/icon/_panel/_sidenave/peye.png" alt="" width="16" >
+        <span *ngIf="(isExpanded$|async) || (isHover$|async)">تعاریف پایه</span>
+
+        <i class="icon-20px" *ngIf="(isExpanded$|async) || (isHover$|async)" [ngClass]="initDefinition.expanded  ? 'icon-chevron-up' : 'icon-chevron-down' "></i>
+
+      </div>
+      <!-- <div class="sidebar-accordion-item-body " [style.display]="initDefinition.expanded ? '' : 'none' ">
+        <mat-nav-list>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout="row" fxLayoutAlign="start center" class="sidenav-link" [routerLink]="['/panel/device/devices']"
+              routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی انواع استخدام</h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/devicestimesync']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی ساختمان و سلف و دستگاه</h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی وعده</h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی پیمانکار</h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی کارت مهمان</h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی پرسنل و اعتبار</h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی تقویم کاری</h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی پرسنل رژیمی </h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی بخش </h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی مرکز هزینه </h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !isExpanded}">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link"
+              [routerLink]="['/panel/device/controlstation']" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="isExpanded">معرفی نقش </h4>
+            </a>
+          </mat-list-item>
+        </mat-nav-list>
+      </div> -->
+
+    </cdk-accordion-item>
+
+  </cdk-accordion>
+</div>

@@ -1,0 +1,33 @@
+@import "/src/assets/styles/mat-color-palette";
+@import "/src/assets/styles/variables";
+
+mat-toolbar {
+  background-color: mat-color($gray-palette, 50) !important;
+  border-bottom: 1px solid mat-color($gray-palette, 200);
+
+
+  mat-icon {
+    color: mat-color($textcolor-palette, dusk);
+
+  }
+}
+
+.notification-menu {
+  max-width: 400px !important;
+
+  &_items {
+    line-height: 25px;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: .85rem;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+  }
+}
+.icon-20px {
+  font-size: 17px;
+}

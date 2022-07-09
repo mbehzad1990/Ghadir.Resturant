@@ -1,6 +1,15 @@
 ::ng-deep [dir="ltr"] {}
 
 ::ng-deep [dir="rtl"] {
+
+  .loginBack{
+    background: url('../../../../../assets/icon/_login/loginBack.jpg') no-repeat center center fixed;
+    background-size: (100%,100%);
+  }
+  .left-side-background{
+    background:linear-gradient(#000A4F,  #0F3179, #000A4F); ;
+    opacity: .8;
+  }
   .loginForm-area {
     height: 50vh;
   }

@@ -28,7 +28,7 @@ export class AuthService {
 
       // Service
       public login() {
-
+        return true;
       }
       public logOut() {
         try {
@@ -48,7 +48,7 @@ export class AuthService {
 
       }
       public getUserTokenFromLocalStorage() {
-
+        return false;
       }
 
 

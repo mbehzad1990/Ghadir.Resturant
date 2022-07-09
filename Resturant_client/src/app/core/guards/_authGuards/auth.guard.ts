@@ -11,13 +11,14 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      const _user_token = this._facadeService.apiFacade.auth.getUserTokenFromLocalStorage();
-      if (_user_token != null) {
-        //User Token Exist in Local Storage
-        return true;
-      }
-      this._facadeService.apiFacade.auth.logOut();
-      return false;
+      // const _user_token = this._facadeService.apiFacade.auth.getUserTokenFromLocalStorage();
+      // if (_user_token != null) {
+      //   // User Token Exist in Local Storage
+
+      //   return true;
+      // }
+      // this._facadeService.apiFacade.auth.logOut();
+      return true;
   }
 
 }
