@@ -6,6 +6,7 @@ import { PanelComponent } from './panel.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
   imports: [
     CommonModule,
     PanelRoutingModule,
-    SharedModule
+    SharedModule,
+    BreadcrumbModule
   ]
 })
 export class PanelModule { }

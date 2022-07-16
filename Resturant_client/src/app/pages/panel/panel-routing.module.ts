@@ -3,8 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { PanelComponent } from './panel.component';
 
 const routes: Routes = [
-  {path:'',component:PanelComponent,children:[]},
-  {path:'panel',component:PanelComponent,children:[]}
+  {
+    path: 'panel', component: PanelComponent, data: { breadcrumb: 'پنل' },children: [
+      { path: 'basic', loadChildren: () => import('../basic-info/basic-info.module').then(m => m.BasicInfoModule), data: { breadcrumb: 'تعاریف پایه' } }
+    ]
+  },
+  {
+    path: '', component: PanelComponent, children: [
+    ]
+  },
 ];
 
 @NgModule({

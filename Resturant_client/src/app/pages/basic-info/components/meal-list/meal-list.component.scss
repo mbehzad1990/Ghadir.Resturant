@@ -1,0 +1,28 @@
+@import "/src/assets/styles/mat-color-palette";
+@import "/src/assets/styles/variables";
+
+/*#region rtl*/
+::ng-deep [dir="rtl"] {
+  .meal-list {
+    background-color: $white;
+    max-height: 76vh;
+    overflow-y: auto;
+    padding-bottom: 0 !important;
+
+    &_header {
+      padding: 8px 8px 8px 0;
+      margin-bottom: 8px;
+
+      &_main-btn {
+        align-items: baseline;
+      }
+    }
+  }
+}
+
+/*#endregion rtl*/
+
+/*#region ltr*/
+::ng-deep [dir="ltr"] {}
+
+/*#endregion ltr*/

@@ -37,6 +37,19 @@
 //   // scrollbar-color: mat-color($gray-palette, 400) mat-color($gray-palette, 50);
 // }
 
+.container-height {
+  min-height: 80vh;
+}
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 58vh;
+  overflow: auto;
+}
+.table-noData{
+  min-height: 47vh;
+}
 .text-right {
   text-align: right;
 }

@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Observable } from 'rxjs';
 import { FacadeService } from 'src/app/core/services/facade_core/facade.service';
+import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
   selector: 'app-panel',
@@ -19,6 +20,8 @@ export class PanelComponent implements OnInit {
   isShowing = false;
   isExpanded$!: Observable<boolean>;
   isShowing$!: Observable<boolean>;
+  titleComponenet: string = "";
+  componentTitle!:string;
 
   // mobileQuery!: MediaQueryList;
   //#endregion
@@ -27,37 +30,37 @@ export class PanelComponent implements OnInit {
 
   //#endregion
 
-  constructor(private _facade: FacadeService) {
+  constructor(private _facade: FacadeService, private breadcrumbService: BreadcrumbService,) {
     this.isExpanded$ = _facade.helperFacade.sidenavHelper.isExpanded$;
     this.isShowing$ = _facade.helperFacade.sidenavHelper.isSideNavHover$;
+    this._setBreadCrumbTitle();
   }
 
   ngOnInit(): void {
   }
 
   //#region Private methods
+  private _setBreadCrumbTitle() {
+    if (this.breadcrumbService.breadcrumbs$ != null) {
+
+      this.breadcrumbService.breadcrumbs$.forEach((item) => {
+        if (item.length != 0) {
+          this.componentTitle = item[item.length - 1].label?.toString()!;
+        }
+      })
+
+    }
+  }
   //#endregion
 
   //#region Public methods
-  getToggleState(state: boolean) {
-    console.log(state);
-  }
-
-
-
-  // isExpanded = true;
-  showSubmenu: boolean = false;
-  showSubSubMenu: boolean = false;
-
-  mouseenter() {
-    // this.sidenavWidth=200;
+  public mouseenter() {
     if (!this._facade.helperFacade.sidenavHelper.getCurrentExpandedState()) {
       console.log("sidenave Hover Update,", true);
       this._facade.helperFacade.sidenavHelper.setSideNavHoverState(true);
     }
   }
-
-  mouseleave() {
+  public mouseleave() {
     // this.sidenavWidth=91;
 
     if (!this._facade.helperFacade.sidenavHelper.getCurrentExpandedState()) {
@@ -65,6 +68,5 @@ export class PanelComponent implements OnInit {
       this._facade.helperFacade.sidenavHelper.setSideNavHoverState(false);
     }
   }
-
   //#endregion
 }
