@@ -25,8 +25,8 @@ export class ToolbarComponent implements OnInit {
 
   //#region Public Fields
   changeExpandToggle(){
-    // this._isExpanded=!this._isExpanded;
-    // this.expandToggle.emit(this._isExpanded);
+    this._isExpanded=!this._isExpanded;
+    this.expandToggle.emit(this._isExpanded);
     this._facade.helperFacade.sidenavHelper.setExpandeState(!(this._facade.helperFacade.sidenavHelper.getCurrentExpandedState()));
   }
   //#endregion
