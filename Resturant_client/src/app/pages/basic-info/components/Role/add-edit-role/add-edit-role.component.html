@@ -1,0 +1,43 @@
+<div class="addrole-modal modal-container">
+  <form [formGroup]="from">
+    <div>
+      <p class="mat-h2 modal-title">{{title}}</p>
+    </div>
+
+    <div fxLayout="column" class="data-container mt-2">
+
+      <div fxLayout="row" class="w-100" fxLayoutGap="20px">
+        <mat-form-field fxFlex="50%" class="input-size" appearance="outline" color="primary">
+          <mat-label>نام بخش</mat-label>
+          <input matInput placeholder="مثلا کارمند" #name formControlName="name" />
+        </mat-form-field>
+        <mat-form-field fxFlex="50%" class="input-size" appearance="outline" color="primary">
+          <mat-label>کد</mat-label>
+          <input matInput type="number" placeholder="123..." #code [pattern]="numberPattern" formControlName="code" />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="w-100" appearance="outline" color="primary">
+        <mat-label>توضیحات</mat-label>
+        <textarea matInput placeholder="توضیحات" #description class="description-field-height"
+          formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+
+    <!-- *ngIf="isFinishOperation" -->
+    <shared-modal-result-message [ResultType]="messageResultType" [messageText]="alertMessage">
+    </shared-modal-result-message>
+
+    <div mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close class="ms-2 curve-btn">انصراف</button>
+      <button mat-raised-button color="primary" class="curve-btn" disabled>
+        <span fxLayout fxLayoutAlign="center center">
+          <span>{{actionButtonText}}</span>
+          <!--  *ngIf="isLoading$ | async" -->
+          <mat-spinner class="mx-2" diameter="20">
+          </mat-spinner>
+        </span>
+
+      </button>
+    </div>
+  </form>
+</div>

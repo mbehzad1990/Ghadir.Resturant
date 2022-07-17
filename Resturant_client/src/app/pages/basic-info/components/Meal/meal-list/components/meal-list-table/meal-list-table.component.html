@@ -30,10 +30,10 @@
       <ng-container matColumnDef="menu">
         <th mat-header-cell class="text-center" *matHeaderCellDef></th>
         <td mat-cell class="text-left menu-width" *matCellDef="let row">
-          <button mat-icon-button (click)="editMeal()">
+          <button mat-icon-button (click)="editMeal()" aria-label="edit">
             <i class="icon-edit-3 icon-20px " matTooltip="ویرایش" matTooltipPosition="right"></i>
           </button>
-          <button mat-icon-button>
+          <button mat-icon-button aria-label="delete">
             <i class="icon-trash-2 icon-20px delete-btn" matTooltip="خذف" matTooltipPosition="above"></i>
           </button>
         </td>

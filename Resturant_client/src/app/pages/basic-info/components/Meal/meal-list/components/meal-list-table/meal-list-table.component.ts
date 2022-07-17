@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 import { RequestModalDto } from 'src/app/shared/dto/_modal_Dto/request-modal-dto';
 import { ActionType } from 'src/app/shared/enum/action-type';
 import { Meal } from 'src/app/shared/models/_meal/meal.model';
-import { AddEditMealComponent } from '../add-edit-meal/add-edit-meal.component';
+import { Role } from 'src/app/shared/models/_role/role.model';
+import { AddEditMealComponent } from '../../../add-edit-meal/add-edit-meal.component';
+
 export interface mealData {
   index: string;
   name: string;

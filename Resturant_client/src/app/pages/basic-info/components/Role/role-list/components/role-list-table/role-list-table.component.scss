@@ -1,0 +1,60 @@
+
+@import "/src/assets/styles/mat-color-palette.scss";
+@import "/src/assets/styles/variables";
+
+/*#region rtl*/
+::ng-deep [dir="rtl"] {
+  table {
+    width: 100%;
+    text-align: right;
+
+    td {
+      padding: 8px 0px;
+    }
+  }
+
+  .mat-column-small-width {
+    width: 35px;
+  }
+
+  .id-col-width {
+    width: 80px;
+  }
+  .name-col-width {
+    width: 180px;
+  }
+  .address-col-width {
+    width: 300px;
+  }
+  .menu-width{
+    min-width: 80px;
+  }
+
+  .add-scroll {
+    max-height: 73vh;
+    overflow: auto;
+  }
+
+  .pagination {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+
+    .mat-paginator-range-label {
+      direction: ltr !important;
+    }
+  }
+
+  .mat-paginator {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .no-white-space {
+    white-space: nowrap;
+  }
+}
+.table-header-color{
+  background-color: #F5F6FA;
+}
+/*#endregion rtl*/

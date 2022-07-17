@@ -1,0 +1,26 @@
+<div fxLayout>
+  <mat-card class="employment-list position-relative container-height" fxFlex="100%">
+    <div fxLayout="column" fxFill fxFlex="100%">
+      <!-- menu -->
+      <div class="employment-list_header" fxLayout="row" fxLayoutAlign="space-between">
+        <div class="employment-list_header_main-btn" fxLayout="row">
+          <button mat-raised-button color="primary" class="ms-2" (click)="addNewEmployee()">
+            <i class="icon-plus-square icon-20px _white-color ms-1"></i>
+            <span>نوع استخدام جدید</span>
+          </button>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <button mat-icon-button >
+            <mat-icon>settings</mat-icon>
+          </button>
+          <button mat-icon-button >
+            <mat-icon>refresh</mat-icon>
+          </button>
+        </div>
+      </div>
+      <!-- Data Table -->
+      <employment-list-table></employment-list-table>
+      <!-- Data Table -->
+    </div>
+  </mat-card>
+</div>

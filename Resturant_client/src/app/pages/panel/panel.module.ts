@@ -7,6 +7,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     CommonModule,
     PanelRoutingModule,
     SharedModule,
-    BreadcrumbModule
+    BreadcrumbModule,
   ]
 })
 export class PanelModule { }

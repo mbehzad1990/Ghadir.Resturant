@@ -26,28 +26,35 @@
         <i class="icon-20px" *ngIf="(isExpanded$|async) || (isHover$|async)"
           [ngClass]="initDefinition.expanded  ? 'icon-chevron-up' : 'icon-chevron-down' "></i>
       </div>
-      <!-- >معرفی انواع استخدام -->
 
       <div class="sidebar-accordion-item-body " [style.display]="initDefinition.expanded ? '' : 'none' ">
         <mat-nav-list>
-          <mat-list-item [ngClass]="{'no-padding' : !(isExpanded$|async) || (isHover$|async)}">
+          <mat-list-item [ngClass]="{'no-padding' : !(isExpanded$|async) || (isHover$|async)}"
+            [routerLink]="['/panel/basic/employee']">
 
-            <a fxLayout fxLayoutAlign="start center" class="sidenav-link" [routerLink]="['/panel/device/devices']"
-              routerLinkActive="router-link-active">
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link" routerLinkActive="router-link-active">
               <h4 class="mat-body" mat-line *ngIf="(isExpanded$|async) || (isHover$|async)">معرفی نوع استخدام</h4>
             </a>
           </mat-list-item>
-          <mat-list-item [ngClass]="{'no-padding' : !(isExpanded$|async) || (isHover$|async)}">
+          <mat-list-item [ngClass]="{'no-padding' : !(isExpanded$|async) || (isHover$|async)}"
+            [routerLink]="['/panel/basic/role']">
 
-            <a fxLayout fxLayoutAlign="start center" class="sidenav-link" [routerLink]="['/panel/device/devices']"
-              routerLinkActive="router-link-active">
-              <h4 class="mat-body" mat-line *ngIf="(isExpanded$|async) || (isHover$|async)">معرفی ساختمان و سلف و دستگاه</h4>
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link" routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="(isExpanded$|async) || (isHover$|async)">معرفی نقش</h4>
             </a>
           </mat-list-item>
           <mat-list-item [ngClass]="{'no-padding' : !(isExpanded$|async) || (isHover$|async)}">
 
-            <a fxLayout fxLayoutAlign="start center" class="sidenav-link" [routerLink]="['/panel/basic/meal']"
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link" [routerLink]="['/panel/device/devices']"
               routerLinkActive="router-link-active">
+              <h4 class="mat-body" mat-line *ngIf="(isExpanded$|async) || (isHover$|async)">معرفی ساختمان و سلف و دستگاه
+              </h4>
+            </a>
+          </mat-list-item>
+          <mat-list-item [ngClass]="{'no-padding' : !(isExpanded$|async) || (isHover$|async)}"
+            [routerLink]="['/panel/basic/meal']">
+
+            <a fxLayout fxLayoutAlign="start center" class="sidenav-link" routerLinkActive="router-link-active">
               <h4 class="mat-body" mat-line *ngIf="(isExpanded$|async) || (isHover$|async)">معرفی وعده</h4>
             </a>
           </mat-list-item>
